@@ -50,31 +50,51 @@ namespace August2021.Page
                 Console.WriteLine("Test failed.");
             }
             // Assertion
-            IWebElement newCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
-            IWebElement newTypeCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[2]"));
-            IWebElement newDescription = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[3]"));
-            IWebElement newPrice = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[4]"));
+
+             //IWebElement newTypeCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[2]"));
+           // IWebElement newDescription = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[3]"));
+            //IWebElement newPrice = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[4]"));
 
             // Assertion
-            Assert.That(newCode.Text == "see123", "Actual Code and expected code do not match.");
-            Assert.That(newTypeCode.Text == "m", "Actual TypeCode and expected tyecode do not match.");
-            Assert.That(newDescription.Text == "see123", "Actual Description and expected description do not match.");
-            Assert.That(newPrice.Text == "$10.00", "Actual Price and expected price do not match.");
 
-            
+            //Assert.That(newTypeCode.Text == "m", "Actual TypeCode and expected tyecode do not match.");
+            //Assert.That(newDescription.Text == "see123", "Actual Description and expected description do not match.");
+            //Assert.That(newPrice.Text == "$10.00", "Actual Price and expected price do not match.");
+
+
             //option 2
-           // if(materialRecord.Text == "see123")
-           //{
-           // Assert.Pass("materialRecord created successfully,test pass.");
-           //}
-           // else
-           //{
-           //Assert.Fail("test failed.");
-           //}
-           
-            Thread.Sleep(2000);
-
+            // if(materialRecord.Text == "see123")
+            //{
+            // Assert.Pass("materialRecord created successfully,test pass.");
+            //}
+            // else
+            //{
+            //Assert.Fail("test failed.");
+            //}
         }
+        public string GetCode(IWebDriver driver)
+
+        {
+            IWebElement newCode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
+            return newCode.Text;
+        }
+        public string GetTypecode(IWebDriver driver)
+        {
+            IWebElement newTypecode = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[2]"));
+            return newTypecode.Text;
+        }
+        public string Getdescription(IWebDriver driver)
+        {
+            IWebElement newdescription = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[3]"));
+            return newdescription.Text;
+        }
+        public string Getprice(IWebDriver driver)
+        {
+            IWebElement newprice = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[4]"));
+            return newprice.Text;
+        }
+
+
         public void EditTM(IWebDriver driver)
         {
             //click on "createNEW" button
@@ -115,7 +135,9 @@ namespace August2021.Page
                 if (finalrecordCreated.Text == "see123")
             {
                 Console.WriteLine("Time record created successfully, test passed.");
-                // select Edit Button
+                
+                    
+                    // select Edit Button
                 IWebElement Editbutton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[1]"));
             Editbutton.Click();
             Thread.Sleep(2000);

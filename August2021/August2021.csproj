@@ -20,8 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Step definition\" />
-    <Folder Include="Specflow\" />
     <Folder Include="Tests\NewFolder\" />
   </ItemGroup>
 

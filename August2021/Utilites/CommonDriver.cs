@@ -5,7 +5,7 @@ using System.Text;
 
 namespace August2021.Utilites
 {
-    class CommonDriver
+   public class CommonDriver
     {
         public static IWebDriver driver;
 
