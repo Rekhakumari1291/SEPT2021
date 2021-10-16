@@ -12,7 +12,7 @@ Scenario: Create time and material record with vaild details
 
 
  @tmtest @regression
-Scenario outline: Edit time and material record with vaild details
+Scenario Outline: Edit time and material record with vaild details
 	Given I logged into turnup portal sucessfully
 	And I nagivate to time and material pagwe
 	When I update <Decrption> existed time and material record
@@ -26,8 +26,8 @@ Scenario outline: Edit time and material record with vaild details
 
 
 
-		 @tmtest @regression
-Scenario outline: delete time and material record with vaild details
+ @tmtest @regression
+Scenario Outline: delete time and material record with vaild details
 	Given I logged into turnup portal sucessfully
 	And I nagivate to time and material pagwe
 	When I delete time and material record

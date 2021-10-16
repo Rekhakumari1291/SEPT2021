@@ -45,7 +45,7 @@
 							"pm.test(\"set Employe id as an eve variable\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"\r",
-							"pm.environment.set(\"Employe id\", jsonData.data.id);\r",
+							"pm.environment.set(\"EmployeeId\", jsonData.data.id);\r",
 							"\r",
 							"  });\r",
 							"\r",
@@ -117,7 +117,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/v1/update/{{Employe id}}",
+					"raw": "{{baseUrl}}/api/v1/update/{{EmployeeId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -125,7 +125,7 @@
 						"api",
 						"v1",
 						"update",
-						"{{Employe id}}"
+						"{{EmployeeId}}"
 					]
 				}
 			},
@@ -144,7 +144,7 @@
 							"pm.test(\"check the respose key value pair\", function () {\r",
 							"    var jsonData = pm.response.json();\r",
 							"    pm.expect(jsonData.status).to.eql(\"success\");\r",
-							"    pm.expect(jsonData.data).to.eql(pm.environment.get(\"Employe id\"));\r",
+							"    pm.expect(jsonData.data.toString()).to.eql(pm.environment.get(\"EmployeeId\").toString());\r",
 							"\r",
 							"      pm.expect(jsonData.message).to.eql(\"Successfully! Record has been deleted\");\r",
 							"\r",
@@ -162,7 +162,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/v1/delete/{{Employe id}}",
+					"raw": "{{baseUrl}}/api/v1/delete/{{EmployeeId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -170,7 +170,7 @@
 						"api",
 						"v1",
 						"delete",
-						"{{Employe id}}"
+						"{{EmployeeId}}"
 					]
 				}
 			},
